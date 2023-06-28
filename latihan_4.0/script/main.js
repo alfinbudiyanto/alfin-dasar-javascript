@@ -1,10 +1,8 @@
-const penumpang = ["Sandhika", undefined, "Alfin"];
+const penumpang = [];
 
 const tambahPenumpang = function (namaPenumpang, penumpang) {
   if (penumpang.length == 0) {
     penumpang.push(namaPenumpang);
-
-    return penumpang;
   } else {
     for (let i = 0; i < penumpang.length; i++) {
       if (penumpang[i] == undefined) {
@@ -22,6 +20,26 @@ const tambahPenumpang = function (namaPenumpang, penumpang) {
       }
     }
   }
+
+  return penumpang;
 };
 
-// tambahPenumpang();
+const hapusPenumpang = function (namaPenumpang, penumpang) {
+  if (penumpang.length == 0) {
+    console.log(`Angkot masih kosong!.`);
+  } else {
+    for (let i = 0; i < penumpang.length; i++) {
+      if (penumpang[i] == namaPenumpang) {
+        penumpang[i] = undefined;
+
+        return penumpang;
+      } else if (i == penumpang.length - 1) {
+        console.log(`${namaPenumpang} tidak ada di dalam angkot.`);
+
+        return penumpang;
+      }
+    }
+  }
+
+  return penumpang;
+};
